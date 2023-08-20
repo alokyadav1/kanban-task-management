@@ -1,0 +1,54 @@
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 0.3rem;
+  box-shadow: 1px 1px 10px rgba(66, 61, 61, 0.2);
+  padding: 0.5rem 5px 0.5rem 5px; 
+  margin: 1rem 0;
+}
+.card p{
+  margin: 5px auto;
+}
+.card .id {
+  font-size: 0.9rem;
+  color: gray;
+  margin: 0;
+}
+.title {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Display only two lines of text */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+  max-height: 40px;
+  width: 85%;
+}
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 10px;
+  opacity: 0.5;
+  font-size: small;
+  margin-top: 0.5rem;
+}
+.tag {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  border: 1px solid rgb(206, 181, 181);
+  padding: 2px;
+  border-radius: 5px;
+}
+.avatar {
+  position: absolute;
+  top: 0.9rem;
+  right: 0;
+}
+
+.checkbox {
+  display: flex;
+  align-items: start;
+}

@@ -1,0 +1,44 @@
+.UserContainer{
+    width: 30%;
+    /* background-color: aqua; */
+    padding: 0.5rem;
+}
+.header{
+    width: calc(100%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1px;
+}
+
+.left,.right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+}
+.done{
+    background-color: blue;
+    padding: 1px;
+}
+
+.itemLength{
+    color:#8F9297;
+    margin-left: 5px;
+}
+
+.userName{
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+    .UserContainer{
+        width: 100%;
+    }
+}
+@media screen and (min-width:760px) and (max-width: 1200px) {
+    .UserContainer{
+        width: 50%;
+    }
+}
