@@ -8,8 +8,25 @@ import Card from '../../Card/Card';
 import Avatar from '../../Avatar/Avatar';
 import GroupingContext from '../../../context/grouping';
 
-function UserTemplate({ currentUser, tickets }) {
+function UserTemplate({ currentUser, tickets, ordering }) {
 const {ticketState, ticketDispatch} = useContext(GroupingContext);
+
+if (ordering === "Priority") {
+  tickets.sort((a, b) => b.priority - a.priority);
+} else {
+  tickets.sort((a, b) => {
+    const firstTitle = a.title.toUpperCase();
+    const secondTitle = b.title.toUpperCase();
+
+    if (firstTitle < secondTitle) {
+      return -1;
+    }
+    if (firstTitle > secondTitle) {
+      return 1;
+    }
+    return 0;
+  });
+}
   return (
     <div className={styles.UserContainer}>
       <div className={styles.header}>

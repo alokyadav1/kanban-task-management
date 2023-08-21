@@ -2,10 +2,13 @@
 import React, { useState, useContext } from "react";
 import StatusTemplate from "./StatusTemplate";
 import GroupingContext from "../../../context/grouping";
-import { BsCircle } from "react-icons/bs";
-import { MdDone } from "react-icons/md";
+import { BsCircle,BsCheckCircleFill } from "react-icons/bs";
+import {TbCircleDotted} from "react-icons/tb";
+import {MdOutlineCancel} from "react-icons/md";
 import styles from "./Status.module.css";
-function Status() {
+
+
+function Status({ordering}) {
   const { ticketState } = useContext(GroupingContext);
   console.log("ticketState", ticketState);
   const [todo, setTodo] = useState(
@@ -20,11 +23,14 @@ function Status() {
   const [backLog, setBackLog] = useState(
     ticketState.filter((ticket) => ticket.status === "Backlog")
   );
+  const [cancel, setCancel] = useState(
+    ticketState.filter((ticket) => ticket.status === "Cancel")
+  );
   const status = [
     {
       name: "Backlog",
       tickets: backLog,
-      icon: <BsCircle size={10} color="gray" />,
+      icon: <TbCircleDotted size={10} color="gray" />,
     },
     {
       name: "Todo",
@@ -39,7 +45,12 @@ function Status() {
     {
       name: "Done",
       tickets: done,
-      icon: <MdDone size={10} color="gray" />,
+      icon: <BsCheckCircleFill size={12} color="blue" />,
+    },
+    {
+      name: "Cancel",
+      tickets: done,
+      icon: <MdOutlineCancel size={12} color="blue" />,
     },
   ];
 
@@ -55,6 +66,7 @@ function Status() {
               tickets={status.tickets}
               icon={status.icon}
               groupingType="Status"
+              ordering={ordering}
             />
           );
         })}

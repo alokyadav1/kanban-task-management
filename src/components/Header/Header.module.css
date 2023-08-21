@@ -40,7 +40,7 @@
     background-color: #F8F9FB;
     border-radius: 0.5rem;
     box-shadow: 1px 1px 10px rgba(66, 61, 61, 0.2);
-    z-index: 10;
+    z-index: 20;
 }
 
 .grouping{

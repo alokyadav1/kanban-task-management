@@ -14,17 +14,7 @@
   color: gray;
   margin: 0;
 }
-.title {
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Display only two lines of text */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  height: 40px;
-  max-height: 40px;
-  width: 85%;
-}
+
 .features {
   display: flex;
   align-items: center;
@@ -48,7 +38,24 @@
   right: 0;
 }
 
-.checkbox {
+.titleContainer {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.statusIcon{
+  width: auto;
+  margin-top: 0.3rem;
+}
+.title {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Display only two lines of text */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+  max-height: 40px;
+  width: 90%;
 }
