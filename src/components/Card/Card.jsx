@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
-import { BsCircleFill, BsThreeDots,BsCheckCircleFill } from "react-icons/bs";
-import { PiDotsThreeLight } from "react-icons/pi";
-import {MdOutlineCancel} from "react-icons/md";
-import {TbCircleDotted} from "react-icons/tb";
-import { BsCircle } from "react-icons/bs";
+import { BsCircleFill, BsThreeDots, BsCheckCircleFill } from "react-icons/bs";
+import { PiCircleHalfFill } from "react-icons/pi";
+import { TbCircleDotted } from "react-icons/tb";
+import { BsCircle,BsFillExclamationSquareFill } from "react-icons/bs";
+import { HiXCircle } from "react-icons/hi";
+import {AiFillSignal} from "react-icons/ai";
+import {MdSignalCellularAlt2Bar, MdSignalCellularAlt1Bar} from "react-icons/md";
 import styles from "./Card.module.css";
 import Avatar from "../Avatar/Avatar";
 import GroupingContext from "../../context/grouping";
@@ -14,27 +16,16 @@ function Card({ tickets, showAvatar = false, groupingType }) {
   const currentUser = user.find((user) => user.id === tickets.userId);
   const [checked, setChecked] = useState(tickets.status === "Done");
 
-  const handleCheckbox = (e) => {
-    const { name, checked } = e.target;
-    if (checked) {
-      setChecked(true);
-      console.log("checked", checked);
-      ticketDispatch({ type: "CHECKED", payload: { id: tickets.id } });
-    } else {
-      setChecked(false);
-      ticketDispatch({ type: "UNCHECKED", payload: { id: tickets.id } });
-    }
-  };
   const selectPriorityIcon = (priority) => {
     switch (priority) {
       case 1:
-        return <BsCircleFill size={8} color="#F56236" />;
+        return <MdSignalCellularAlt1Bar size={20} color="#60646C" />;
       case 2:
-        return <BsCircleFill size={8} color="#FCE788" />;
+        return <MdSignalCellularAlt2Bar size={20} color="#60646C" />;
       case 3:
-        return <BsCircleFill size={8} color="#88FCA3" />;
+        return <AiFillSignal size={10} color="#60646C" />;
       case 4:
-        return <BsCircleFill size={8} color="#1EAE98" />;
+        return <BsFillExclamationSquareFill size={10} color="#FC7840" />;
       default:
         return <BsThreeDots size={12} color="black" />;
     }
@@ -43,15 +34,15 @@ function Card({ tickets, showAvatar = false, groupingType }) {
   const selectStatusIcon = (status) => {
     switch (status) {
       case "Todo":
-        return <BsCircle size={10} />;
+        return <BsCircle size={13} color="gray" />;
       case "In progress":
-        return <BsCircle size={10} />;
+        return <PiCircleHalfFill size={15} color="#F1C949" />;
       case "Backlog":
-        return <TbCircleDotted size={10} />;
+        return <TbCircleDotted size={15} color="gray" />;
       case "Done":
-        return <BsCheckCircleFill size={12} color="blue" />;
+        return <BsCheckCircleFill size={15} color="blue" />;
       default:
-        return <MdOutlineCancel size={12} color="black" />;
+        return <HiXCircle size={15} color="#93A2B3" />;
     }
   };
   return (
@@ -63,12 +54,16 @@ function Card({ tickets, showAvatar = false, groupingType }) {
         </div>
       ) : (
         <div className={styles.titleContainer}>
-          <div className={styles.statusIcon}>{selectStatusIcon(tickets.status)}</div>
+          <div className={styles.statusIcon}>
+            {selectStatusIcon(tickets.status)}
+          </div>
           <p className={styles.title}>{tickets.title}</p>
         </div>
       )}
       <div className={styles.features}>
-        <div className="">{selectPriorityIcon(tickets.priority)}</div>
+        {groupingType !== "Priority" && (
+          <div className="">{selectPriorityIcon(tickets.priority)}</div>
+        )}
         <div className={styles.tag}>
           <BsCircleFill size={8} color="#BEC2C8" />
           {tickets.tag.map((tag, index) => {

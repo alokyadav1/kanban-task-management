@@ -17,6 +17,9 @@
     justify-content: center;
     column-gap: 5px;
 }
+.icon{
+    margin-top: 2px;
+}
 .done{
     background-color: blue;
     padding: 1px;
@@ -24,6 +27,10 @@
 .itemLength{
     color:#8F9297;
     margin-left: 5px;
+}
+
+.add, .more{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

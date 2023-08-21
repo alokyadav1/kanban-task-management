@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import StatusTemplate from "../Status/StatusTemplate";
 import GroupingContext from "../../../context/grouping";
-import { FiBarChart2 } from "react-icons/fi";
+import {BsFillExclamationSquareFill ,BsThreeDots} from "react-icons/bs";
+import {MdSignalCellularAlt2Bar, MdSignalCellularAlt1Bar} from "react-icons/md";
+import {AiFillSignal} from "react-icons/ai";
+
 import styles from "./Priority.module.css";
 function Priority() {
   const { ticketState } = useContext(GroupingContext);
@@ -9,27 +12,27 @@ function Priority() {
     {
       name: "No priority",
       tickets: ticketState.filter((ticket) => ticket.priority === 0),
-      icon: <FiBarChart2 size={10} color="gray" />,
+      icon: <BsThreeDots size={10} color="gray" />,
     },
     {
       name: "Urgent",
       tickets: ticketState.filter((ticket) => ticket.priority === 4),
-      icon: <FiBarChart2 size={10} color="gray" />,
+      icon: <BsFillExclamationSquareFill size={12} color="#FC7840" />,
     },
     {
       name: "High",
       tickets: ticketState.filter((ticket) => ticket.priority === 3),
-      icon: <FiBarChart2 size={10} color="gray" />,
+      icon: <AiFillSignal size={12} color="#60646C" />,
     },
     {
       name: "Medium",
       tickets: ticketState.filter((ticket) => ticket.priority === 2),
-      icon: <FiBarChart2 size={10} color="gray" />,
+      icon: <MdSignalCellularAlt2Bar size={20} color="#60646C" />,
     },
     {
       name: "Low",
       tickets: ticketState.filter((ticket) => ticket.priority === 1),
-      icon: <FiBarChart2 size={10} color="gray" />,
+      icon: <MdSignalCellularAlt1Bar size={20} color="#60646C" />,
     },
   ];
   // console.log("Users ",users);

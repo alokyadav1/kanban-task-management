@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useReducer, useContext, useState, useEffect } from "react";
+import Loader from "./components/Loader/Loader";
 import Header from "./components/Header/Header";
 import Status from "./components/Grouping/Status/Status";
 import Priority from "./components/Grouping/Priority/Priority";
@@ -53,8 +54,8 @@ function App() {
         ticketDispatch,
       }}
     >
-      {loading ? (
-        <div className={styles.loader}>Loading...</div>
+      {loading ? (  
+        <Loader />
       ) : (
         <div>
           <div className={styles.layoutHeader}>

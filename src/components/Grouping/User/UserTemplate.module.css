@@ -32,6 +32,10 @@
     opacity: 0.7;
 }
 
+.add, .more{
+    cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
     .UserContainer{
         width: 100%;

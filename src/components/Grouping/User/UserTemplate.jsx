@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React,{useContext} from 'react';
-import {GrFormAdd} from 'react-icons/gr';
+import {MdOutlineAdd} from 'react-icons/md';
 import {IoEllipsisHorizontal} from 'react-icons/io5';
 import {BsCircle} from 'react-icons/bs';
 import styles from "./UserTemplate.module.css";
@@ -38,10 +38,10 @@ if (ordering === "Priority") {
           <span className={styles.itemLength}>{tickets?.length}</span>
         </div>
         <div className={styles.right}>
-            <div className="add">
-                <GrFormAdd size={20} color="gray" />
+            <div className={styles.add}>
+            <MdOutlineAdd size={20} color="gray" />
             </div>
-            <div className="more">
+            <div className={styles.more}>
                 <IoEllipsisHorizontal size={20} color="gray" />
             </div>
         </div>

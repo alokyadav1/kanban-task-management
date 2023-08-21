@@ -4,7 +4,8 @@ import StatusTemplate from "./StatusTemplate";
 import GroupingContext from "../../../context/grouping";
 import { BsCircle,BsCheckCircleFill } from "react-icons/bs";
 import {TbCircleDotted} from "react-icons/tb";
-import {MdOutlineCancel} from "react-icons/md";
+import {PiCircleHalfFill} from "react-icons/pi";
+import {HiXCircle} from "react-icons/hi";
 import styles from "./Status.module.css";
 
 
@@ -30,17 +31,17 @@ function Status({ordering}) {
     {
       name: "Backlog",
       tickets: backLog,
-      icon: <TbCircleDotted size={10} color="gray" />,
+      icon: <TbCircleDotted size={12} color="gray" />,
     },
     {
       name: "Todo",
       tickets: todo,
-      icon: <BsCircle size={10} color="gray" />,
+      icon: <BsCircle size={12} color="gray" />,
     },
     {
       name: "In progress",
       tickets: inProgress,
-      icon: <BsCircle size={10} color="gray" />,
+      icon: <PiCircleHalfFill size={15} color="#F1C949" />,
     },
     {
       name: "Done",
@@ -49,8 +50,8 @@ function Status({ordering}) {
     },
     {
       name: "Cancel",
-      tickets: done,
-      icon: <MdOutlineCancel size={12} color="blue" />,
+      tickets: cancel,
+      icon: <HiXCircle size={12} color="#93A2B3" />,
     },
   ];
 

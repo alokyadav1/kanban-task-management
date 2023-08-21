@@ -2,6 +2,7 @@
 import { GrFormAdd } from "react-icons/gr";
 import { IoEllipsisHorizontal } from "react-icons/io5";
 import { BsCircle } from "react-icons/bs";
+import {MdOutlineAdd} from "react-icons/md";
 import styles from "./StatusTemplate.module.css";
 import Card from "../../Card/Card";
 function StatusTemplate({
@@ -32,15 +33,15 @@ function StatusTemplate({
       {/* {ordering} */}
       <div className={styles.header}>
         <div className={styles.left}>
-          <div className={name === "done" ? styles.done : ""}>{icon}</div>
+          <div className={styles.icon}>{icon}</div>
           <span>{name}</span>
           <span className={styles.itemLength}>{tickets.length}</span>
         </div>
         <div className={styles.right}>
-          <div className="add">
-            <GrFormAdd size={20} color="gray" />
+          <div className={styles.add}>
+            <MdOutlineAdd size={20} color="gray" />
           </div>
-          <div className="more">
+          <div className={styles.more}>
             <IoEllipsisHorizontal size={20} color="gray" />
           </div>
         </div>
