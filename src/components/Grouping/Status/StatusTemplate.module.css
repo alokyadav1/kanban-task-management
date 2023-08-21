@@ -1,5 +1,5 @@
 .statusContainer{
-    width: 25%;
+    width: 100%;
     /* background-color: aqua; */
     padding: 0.5rem;
 }
@@ -38,15 +38,28 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
-    .statusContainer{
-        width: 100%;
-    }
-}
-
-@media screen and (min-width:760px) and (max-width: 1200px) {
+@media screen and (min-width: 500px) {
     .statusContainer{
         width: 50%;
     }
 }
+
+@media screen and (min-width:768px) and (max-width: 1200px) {
+    .statusContainer{
+        width: 33%;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+    .statusContainer{
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .statusContainer{
+        width: 20%;
+    }
+}
+
     
