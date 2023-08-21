@@ -34,7 +34,7 @@ function StatusTemplate({
       <div className={styles.header}>
         <div className={styles.left}>
           <div className={styles.icon}>{icon}</div>
-          <span>{name}</span>
+          <span className={styles.title}>{name}</span>
           <span className={styles.itemLength}>{tickets.length}</span>
         </div>
         <div className={styles.right}>

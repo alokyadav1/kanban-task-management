@@ -62,7 +62,7 @@ function Card({ tickets, showAvatar = false, groupingType }) {
       )}
       <div className={styles.features}>
         {groupingType !== "Priority" && (
-          <div className="">{selectPriorityIcon(tickets.priority)}</div>
+          <div className={styles.groupIcon}>{selectPriorityIcon(tickets.priority)}</div>
         )}
         <div className={styles.tag}>
           <BsCircleFill size={8} color="#BEC2C8" />
